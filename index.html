@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Product Upload</title>
+    <link rel="stylesheet" href="seller-upload.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <form class="upload-form" id="seller-products">
+            <div class="header">
+                <i class="fas fa-store"></i>
+                <h2>Upload Your Product</h2>
+                <p class="subtitle">List your products for customers to discover</p>
+            </div>
+
+            <!-- Seller Information Section -->
+            <div class="form-section">
+                <h3><i class="fas fa-user-tie"></i> Seller Information</h3>
+                <div class="form-group">
+                    <label for="seller-name">Seller Name</label>
+                    <input type="text" id="seller-name" name="seller-name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="company-name">Company Name</label>
+                    <input type="text" id="company-name" name="company-name" required>
+                </div>
+            </div>
+
+            <!-- Product Information Section -->
+            <div class="form-section">
+                <h3><i class="fas fa-box-open"></i> Product Details</h3>
+                <div class="form-group">
+                    <label for="product-name">Product Name</label>
+                    <input type="text" id="product-name" name="product-name" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="quantity">Quantity Available</label>
+                        <input type="number" id="quantity" name="quantity" min="1" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="price">Price (₹)</label>
+                        <input type="number" id="price" name="price" min="0" step="0.01" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="gst">GST Number</label>
+                    <input type="text" id="gst" name="gst" pattern="^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$" 
+                           placeholder="15AABCU9603R1ZX" required>
+                    <span class="input-hint">Format: 15AABCU9603R1ZX</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select id="category" name="category" required>
+                        <option value="">Select a category</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="clothing">Clothing</option>
+                        <option value="home">Home & Living</option>
+                        <option value="books">Books</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Product Description</label>
+                    <textarea id="description" name="description" rows="4" required></textarea>
+                </div>
+            </div>
+
+            <!-- Additional Details Section -->
+            <div class="form-section">
+                <h3><i class="fas fa-tags"></i> Additional Details</h3>
+                <div class="form-group">
+                    <label for="sku">SKU (Stock Keeping Unit)</label>
+                    <input type="text" id="sku" name="sku">
+                </div>
+
+                <div class="form-group">
+                    <label for="tags">Tags (comma separated)</label>
+                    <input type="text" id="tags" name="tags" placeholder="e.g., new, trending, sale">
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">
+                <i class="fas fa-upload"></i> Upload Product
+            </button>
+        </form>
+    </div>
+<!-- Firebase SDKs -->
+<script src="https://www.gstatic.com/firebasejs/11.3.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/11.3.0/firebase-database-compat.js"></script>
+
+<!-- Your Custom Script -->
+<script src="script.js"></script>
+
+</body>
+</html> 
